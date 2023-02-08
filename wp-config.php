@@ -23,13 +23,13 @@ $loader
 		'DB_NAME',
 		'DB_USER',
 		'DB_PASSWORD',
+		'DB_HOST',
+		'WP_DEBUG'
 	] )
 	->setDefaults( [
 		'ABSPATH'         => __DIR__ . '/wp',
 		'DB_CHARSET'      => 'utf8',
 		'DB_COLLATE'      => '',
-		'DB_HOST'         => 'localhost',
-		'WP_DEBUG'        => false,
 		'WP_TABLE_PREFIX' => 'wp_',
 	] )
 	->parse( __DIR__ . '/.env' )
