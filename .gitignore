@@ -5,6 +5,9 @@
 .idea/*
 !.idea/workspace.xml
 
+# vscode
+.vscode/*
+
 # Composer
 /vendor
 
