@@ -14,7 +14,7 @@ title = "gitleaks config"
 description = "global allow lists"
 paths = [
     '''gitleaks.toml''',
-    '''(.*?)(jpg|gif|doc|docx|zip|xls|pdf|bin|svg|socket)$''',
+    '''(.*?)(jpg|gif|doc|docx|zip|xls|pdf|bin|svg|socket|js)$''',
     '''(go.mod|go.sum)$''',
     '''node_modules''',
     '''vendor''',
