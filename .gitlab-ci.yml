@@ -9,6 +9,19 @@ include:
     ref: '2.1.1'
     file: '/templates/gitlab-ci-gitleaks.yml'
 
+# your pipeline stages
+stages:
+  - build
+  - test
+  - package-build
+  - package-test
+  - infra
+  - deploy
+  - acceptance
+  - publish
+  - infra-prod
+  - production
+
 before_script:
   - docker version
   - docker-compose version
