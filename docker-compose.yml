@@ -1,6 +1,12 @@
 version: '2'
 services:
- 
+
+  php:
+    image: bitnami/php-fpm:latest
+    ports:
+      - 9000:9000
+    volumes:
+      - ./wordpress:/app:rw
   mysql:
     image: mysql:5.7
     env_file:
@@ -23,14 +29,19 @@ services:
       VIRTUAL_HOST: phpmyadmin.wp.local  
     container_name: wp_phpmyadmin
   app_dev:
+    image: 'bitnami/apache:latest'
     container_name: wp_app
-    build: ./wordpress/
+    #build: ./wordpress/
     environment:
       - VIRTUAL_HOST=app.wp.local
     volumes : 
-      - ./wordpress:/var/www/html:rw
+      - ./wordpress/config/wdpress.conf:/vhosts/myapp.conf:ro
+      - ./wordpress:/app:rw
     restart: always
     ports:
-      - 8100:80
+      - 8100:8080
+      #- 443:8443
     links:
       - "mysql:wp_mysql"
+    depends_on:
+      - php
