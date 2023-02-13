@@ -31,7 +31,6 @@ services:
   app_dev:
     image: 'bitnami/apache:latest'
     container_name: wp_app
-    #build: ./wordpress/
     environment:
       - VIRTUAL_HOST=app.wp.local
     volumes : 
