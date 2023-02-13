@@ -5,7 +5,6 @@ services:
   - docker:dind
 
 include:
-# gitleaks
   - project: 'to-be-continuous/gitleaks'
     ref: '2.1.1'
     file: '/templates/gitlab-ci-gitleaks.yml'
