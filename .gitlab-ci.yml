@@ -4,6 +4,12 @@ image:
 services:
   - docker:dind
 
+include:
+# gitleaks
+  - project: 'to-be-continuous/gitleaks'
+    ref: '2.1.1'
+    file: '/templates/gitlab-ci-gitleaks.yml'
+
 before_script:
   - docker version
   - docker-compose version
@@ -12,7 +18,9 @@ build-job:
   stage: build
   script:
     - echo "Hello, $GITLAB_USER_LOGIN!"
-    - docker-compose up -d 
+    - docker-compose down
+    - docker-compose build
+    - docker-compose up -d
 
 test-job1:
   stage: test
