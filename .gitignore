@@ -39,7 +39,7 @@
 wp-cli.local.yml
 
 # dotEnv Configuration
-.env
+wordpress/.env
 
 # docker
 .docker

@@ -4,7 +4,7 @@ services:
   mysql:
     image: mysql:5.7
     env_file:
-      - ./wordpress/.env
+      - ./.env
     volumes:
       - ./.docker/data/mysql/:/var/lib/mysql
       - ./.docker/logs/mysql/:/var/log/mysql
@@ -17,7 +17,7 @@ services:
     ports:
       -  8080:80
     env_file:
-      - ./wordpress/.env
+      - ./.env
     environment:
       PMA_HOST: mysql
       VIRTUAL_HOST: phpmyadmin.wp.local  
