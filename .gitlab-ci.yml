@@ -1,8 +1,10 @@
-include:
-  - project: 'to-be-continuous/docker'
-    ref: '3.5.2'
-    file: '/templates/gitlab-ci-docker.yml'
+image:
+  name: docker/compose:latest
 
+services:
+  - docker:dind
+
+include:
   - project: 'to-be-continuous/gitleaks'
     ref: '2.1.1'
     file: '/templates/gitlab-ci-gitleaks.yml'
